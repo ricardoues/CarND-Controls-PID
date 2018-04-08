@@ -1,6 +1,8 @@
 #ifndef PID_H
 #define PID_H
 
+#include <stdlib.h>
+
 class PID {
 public:
   /*
@@ -33,7 +35,6 @@ public:
   *  in the integral term. 
   */ 
   double int_cte; 
-
 
   
   /*

@@ -34,9 +34,9 @@ int main()
 
   PID pid;
   // Initialize the pid variable.
-  pid.Kp = 0.04; 
-  pid.Ki = 0.0085; 
-  pid.Kd = 0.5;
+  pid.Kp = 0.05; 
+  pid.Ki = 0.00001; 
+  pid.Kd = 0.4; 
   
   pid.prev_cte = 0.0; 
   pid.diff_cte = 0.0; 
@@ -65,29 +65,17 @@ int main()
           double speed = std::stod(j[1]["speed"].get<std::string>());
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
           double steer_value;
-          /*
-          * Calculate steering value here, remember the steering value is
-          * [-1, 1].
-          */
+          
+          pid.UpdateError(cte); 
 
-          if (pid.counter == 0)
-          {
-             pid.prev_cte = cte;
-             pid.counter++; 
-          }
-
-          pid.diff_cte = cte - pid.prev_cte; 
-          pid.prev_cte = cte; 
-
-          pid.int_cte += cte; 
-
-          steer_value = -pid.Kp*cte - pid.Kd*pid.diff_cte - pid.Ki*pid.int_cte; 
+          steer_value = pid.TotalError(); 
           
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
+          //msgJson["throttle"] = 0.3;
           msgJson["throttle"] = 0.3;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           std::cout << msg << std::endl;
