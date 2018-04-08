@@ -13,6 +13,9 @@ The code was compiled in a 32 bit machine with Ubuntu 16.04.4 installed. In orde
 
 With following combination of parameters: Kp=0.05, Kd=0.4, and Ki=0.00001, I modified a little bit each one of them but this did not improve substantially rhe PID Controller. Finally, the car was able to complete a lap around the track. 
 
+The following web page was very useful: 
+
+[http://smithcsrobot.weebly.com/uploads/6/0/9/5/60954939/pid_control_document.pdf](http://smithcsrobot.weebly.com/uploads/6/0/9/5/60954939/pid_control_document.pdf)
 
 ## How to compile the project
 Clone the repository and inside the main directory run the following command:
