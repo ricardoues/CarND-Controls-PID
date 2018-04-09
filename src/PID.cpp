@@ -30,7 +30,7 @@ void PID::UpdateError(double cte) {
    /*
    * The following code is for resetting the integral term.
    * if cte is in meters, I think 0.5 is a good value for resetting the integral term.
-   * I based on the following web page: 
+   * I take the following web page as reference: 
    * http://smithcsrobot.weebly.com/uploads/6/0/9/5/60954939/pid_control_document.pdf
    */ 
 
