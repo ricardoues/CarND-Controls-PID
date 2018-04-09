@@ -11,7 +11,7 @@ The code was compiled in a 32 bit machine with Ubuntu 16.04.4 installed. In orde
 3. I increase Kd, I try the following values: 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.2, 0.3, 0.4, 0.5. The best value was 0.4. 
 4. I increase Ki, I try with the following values: 0.0001,  0.00001, 0.000001. The best value was 0.00001. 
 
-With following combination of parameters: Kp=0.05, Kd=0.4, and Ki=0.00001, I modified a little bit each one of them but this did not improve substantially rhe PID Controller. Finally, the car was able to complete a lap around the track. 
+With following combination of parameters: Kp=0.05, Kd=0.4, and Ki=0.00001, I modified a little bit each one of them but this did not improve substantially the PID Controller. Finally, the car was able to complete a lap around the track. 
 
 The following web page was very useful: 
 
